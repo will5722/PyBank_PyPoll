@@ -9,7 +9,7 @@ with open(budget_csv, 'r') as csvfile:
     next(csvreader, None)
 
 #Track what we are looking for in the data, may need to make others once loop is made
-    TotalMonths = 0
+    TotalMonths = 1
     Month = []
     NetTotal = 0
     PLChangeList = []
@@ -20,6 +20,7 @@ with open(budget_csv, 'r') as csvfile:
     FirstMonthData = next(csvreader, None)
     FirstMonthPL = int(FirstMonthData[1])
     PrevPL = FirstMonthPL
+    NetTotal = int(FirstMonthData[1])
    
     
 
