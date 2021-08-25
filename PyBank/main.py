@@ -21,7 +21,7 @@ with open(budget_csv, 'r') as csvfile:
     FirstMonthPL = int(FirstMonthData[1])
     PrevPL = FirstMonthPL
     NetTotal = int(FirstMonthData[1])
-   
+
     
 
     for row in csvreader:
@@ -38,7 +38,15 @@ with open(budget_csv, 'r') as csvfile:
         PLChangeList.append(PLchange)
 
 
-
+    #Find largest and smallest values in PLChange
+    GreatestProfit = max(PLChangeList)
+    GreatestLoss = min(PLChangeList)
+    #Find the index of the above to find the corresponding month 
+    ProfitMonthInd = PLChangeList.index(GreatestProfit)
+    LossMonthInd = PLChangeList.index(GreatestLoss)
+    #Use index to set the month
+    ProfitMonth = Month[ProfitMonthInd]
+    LossMonth = Month[LossMonthInd]
 
     #Go into list and find average change, round to 2 decimal places
     AverageChange = round(sum(PLChangeList) / len(PLChangeList), 2)
@@ -49,6 +57,7 @@ with open(budget_csv, 'r') as csvfile:
     print(f'Total Months: {TotalMonths}')
     print(f'Total: ${NetTotal}')
     print(f'Average Change: ${AverageChange}')
-
+    print(f'Greaatest Increase in Profits: {ProfitMonth} (${GreatestProfit}) ')
+    print(f'Greaatest Decrease in Profits: {LossMonth} (${GreatestLoss}) ')
 
 
