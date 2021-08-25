@@ -52,15 +52,22 @@ with open(budget_csv, 'r') as csvfile:
     AverageChange = round(sum(PLChangeList) / len(PLChangeList), 2)
 
     #Print analysis in terminal
-    print("Financial Analysis")
+    print('Financial Analysis')
     print('---------------------------')
     print(f'Total Months: {TotalMonths}')
     print(f'Total: ${NetTotal}')
     print(f'Average Change: ${AverageChange}')
-    print(f'Greaatest Increase in Profits: {ProfitMonth} (${GreatestProfit}) ')
-    print(f'Greaatest Decrease in Profits: {LossMonth} (${GreatestLoss}) ')
+    print(f'Greatest Increase in Profits: {ProfitMonth} (${GreatestProfit}) ')
+    print(f'Greatest Decrease in Profits: {LossMonth} (${GreatestLoss}) ')
 
-    #Export to .txt file
+#Export analysis to .txt file
+output_file = os.path.join('Analysis', 'Financial_Analysis.txt')
+with open(output_file, 'w')as txtfile:
+    txtfile.write('Financial Analysis' + '\n')
+    txtfile.write('---------------------------' + '\n')
+    txtfile.write(f'Total Months: {TotalMonths}' + '\n')
+    txtfile.write(f'Total: ${NetTotal}' + '\n')
+    txtfile.write(f'Average Change: ${AverageChange}' + '\n')
+    txtfile.write(f'Greatest Increase in Profits: {ProfitMonth} (${GreatestProfit}) ' + '\n')
+    txtfile.write(f'Greatest Decrease in Profits: {LossMonth} (${GreatestLoss}) ' + '\n')
     
-
-
