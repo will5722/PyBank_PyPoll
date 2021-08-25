@@ -51,7 +51,7 @@ with open(budget_csv, 'r') as csvfile:
     #Go into list and find average change, round to 2 decimal places
     AverageChange = round(sum(PLChangeList) / len(PLChangeList), 2)
 
-
+    #Print analysis in terminal
     print("Financial Analysis")
     print('---------------------------')
     print(f'Total Months: {TotalMonths}')
@@ -59,5 +59,8 @@ with open(budget_csv, 'r') as csvfile:
     print(f'Average Change: ${AverageChange}')
     print(f'Greaatest Increase in Profits: {ProfitMonth} (${GreatestProfit}) ')
     print(f'Greaatest Decrease in Profits: {LossMonth} (${GreatestLoss}) ')
+
+    #Export to .txt file
+    
 
 
