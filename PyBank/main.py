@@ -12,7 +12,8 @@ with open(budget_csv, 'r') as csvfile:
     TotalMonths = 0
     Month = []
     NetTotal = 0
-    TotalRevChange = []
+    PLChangeList = []
+
 
     #Set at 0 since no previous month at first, set again in loop for previous month
     PrevPL = 0
@@ -28,7 +29,21 @@ with open(budget_csv, 'r') as csvfile:
         PLchange = int(row[1]) - int(PrevPL)
         #set previous profit/loss for the next iteration
         PrevPL = row[1]
+        #Add to lists
+        Month.append(row[0])
+        PLChangeList.append(PLchange)
 
+
+
+
+
+
+
+
+    print("Financial Analysis")
+    print('---------------------------')
+    print(f'Total Months: {TotalMonths}')
+    print(f'Total: ${NetTotal}')
 
 
 
