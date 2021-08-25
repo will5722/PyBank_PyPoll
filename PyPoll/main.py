@@ -8,16 +8,17 @@ with open(election_csv, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     next(csvreader, None)
 
-#Set variables/parameters to track
+#Set variables/parameters to track, put name of candidate in loop
     TotalVotes = 0
-    Candidates = []
-    CandidateVotes = []
+    CandidateList = []
+    CandidateVotes = {}
 
 
 
     for row in csvreader:
         Totalvotes =+ 1
-        Candidates.append(row[2])
-        
+        Name = row[2]
+        CandidateList.append(row[2])
+
 
     
