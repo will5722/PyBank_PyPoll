@@ -14,7 +14,7 @@ with open(election_csv, 'r') as csvfile:
     CandidateVotes = {}
 
 
-
+    #Loop through rows, find each candidate, add votes to each
     for row in csvreader:
         TotalVotes += 1
         Name = row[2]
@@ -25,7 +25,7 @@ with open(election_csv, 'r') as csvfile:
             CandidateVotes[Name] = 0
             CandidateVotes[Name] += 1
 
-    print(CandidateVotes)
+    #Create new keys in dict for % of votes each candidate received
 
 
     
