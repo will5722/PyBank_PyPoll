@@ -16,7 +16,10 @@ with open(budget_csv, 'r') as csvfile:
 
 
     #Set at 0 since no previous month at first, set again in loop for previous month
-    PrevPL = 0
+    #Set PrevPL for first month, average not calculating correctly
+    FirstMonthData = next(csvreader, None)
+    FirstMonthPL = int(FirstMonthData[1])
+    PrevPL = FirstMonthPL
    
     
 
@@ -37,14 +40,14 @@ with open(budget_csv, 'r') as csvfile:
 
 
 
-
+    AverageChange = round(sum(PLChangeList) / len(PLChangeList), 2)
 
 
     print("Financial Analysis")
     print('---------------------------')
     print(f'Total Months: {TotalMonths}')
     print(f'Total: ${NetTotal}')
-
+    print(f'Average Change: ${AverageChange}')
 
 
 
