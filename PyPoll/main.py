@@ -16,9 +16,16 @@ with open(election_csv, 'r') as csvfile:
 
 
     for row in csvreader:
-        Totalvotes =+ 1
+        TotalVotes += 1
         Name = row[2]
-        CandidateList.append(row[2])
+        if Name in CandidateList:
+            CandidateVotes[Name] += 1
+        else:
+            CandidateList.append(Name)
+            CandidateVotes[Name] = 0
+            CandidateVotes[Name] += 1
+
+    print(CandidateVotes)
 
 
     
