@@ -43,7 +43,24 @@ with open(election_csv, 'r') as csvfile:
     print(f"Khan: {CandidateVotes['Percent_Khan']}% ({CandidateVotes['Khan']})")
     print(f"Correy: {CandidateVotes['Percent_Correy']}% ({CandidateVotes['Correy']})")
     print(f"Li: {CandidateVotes['Percent_Li']}% ({CandidateVotes['Li']})")
+    #Apostrophe in name made using f string difficult
     print("O'Tooley: " + str(CandidateVotes["Percent_O'Tooley"]) + "% " + "(" + str(CandidateVotes["O'Tooley"]) + ")")
     print("----------------------")
     print(f"Winner: {winner}")
     print("----------------------")
+
+#Export analysis to .txt file
+output_file = os.path.join('Analysis', 'Election_Analysis.txt')
+with open(output_file, 'w') as txtfile:
+    txtfile.write("Election Results" + "\n")
+    txtfile.write("----------------------"  + "\n")
+    txtfile.write(f"Total Votes: {TotalVotes}"  + "\n")
+    txtfile.write("----------------------" + "\n")
+    txtfile.write(f"Khan: {CandidateVotes['Percent_Khan']}% ({CandidateVotes['Khan']})" + "\n")
+    txtfile.write(f"Correy: {CandidateVotes['Percent_Correy']}% ({CandidateVotes['Correy']})" + "\n")
+    txtfile.write(f"Li: {CandidateVotes['Percent_Li']}% ({CandidateVotes['Li']})" + "\n")
+    #Apostrophe in name made using f string difficult
+    txtfile.write("O'Tooley: " + str(CandidateVotes["Percent_O'Tooley"]) + "% " + "(" + str(CandidateVotes["O'Tooley"]) + ")" + "\n")
+    txtfile.write("----------------------" + "\n")
+    txtfile.write(f"Winner: {winner}" + "\n")
+    txtfile.write("----------------------" + "\n")
