@@ -32,8 +32,18 @@ with open(election_csv, 'r') as csvfile:
     CandidateVotes['Percent_Li'] = round(CandidateVotes['Li'] / TotalVotes * 100, 3)
     CandidateVotes["Percent_O'Tooley"] = round(CandidateVotes["O'Tooley"] / TotalVotes * 100, 3)
     
+    #Find winner, need the key associated with the highest amount of votes
+    winner = max(CandidateVotes, key=CandidateVotes.get)
 
+
+    print("Election Results")
+    print("----------------------")
+    print(f"Total Votes: {TotalVotes}")
+    print("----------------------")
     print(f"Khan: {CandidateVotes['Percent_Khan']}% ({CandidateVotes['Khan']})")
-    print(CandidateVotes['Percent_Correy'])
-    print(CandidateVotes['Percent_Li'])
-    print(CandidateVotes["Percent_O'Tooley"])
+    print(f"Correy: {CandidateVotes['Percent_Correy']}% ({CandidateVotes['Correy']})")
+    print(f"Li: {CandidateVotes['Percent_Li']}% ({CandidateVotes['Li']})")
+    print("O'Tooley: " + str(CandidateVotes["Percent_O'Tooley"]) + "% " + "(" + str(CandidateVotes["O'Tooley"]) + ")")
+    print("----------------------")
+    print(f"Winner: {winner}")
+    print("----------------------")
