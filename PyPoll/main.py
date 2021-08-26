@@ -25,7 +25,15 @@ with open(election_csv, 'r') as csvfile:
             CandidateVotes[Name] = 0
             CandidateVotes[Name] += 1
 
-    #Create new keys in dict for % of votes each candidate received
-
-
+    #Find percentage of votes for each candidate by adding to dict
+    # then find a winner by going through dict/lists
+    CandidateVotes['Percent_Khan'] = round(CandidateVotes['Khan'] / TotalVotes * 100, 3)
+    CandidateVotes['Percent_Correy'] = round(CandidateVotes['Correy'] / TotalVotes * 100, 3)
+    CandidateVotes['Percent_Li'] = round(CandidateVotes['Li'] / TotalVotes * 100, 3)
+    CandidateVotes["Percent_O'Tooley"] = round(CandidateVotes["O'Tooley"] / TotalVotes * 100, 3)
     
+
+    print(f"Khan: {CandidateVotes['Percent_Khan']}% ({CandidateVotes['Khan']})")
+    print(CandidateVotes['Percent_Correy'])
+    print(CandidateVotes['Percent_Li'])
+    print(CandidateVotes["Percent_O'Tooley"])
