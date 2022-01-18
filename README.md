@@ -1,5 +1,5 @@
-# Python-Challenge
-2 Python challenges, PyBank and PyPoll
+# PyBank and PyPoll
+
 
 PyBank: Takes a csv file and displays the following in the terminal and exports to a txt file.
 
